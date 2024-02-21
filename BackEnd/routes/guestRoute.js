@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 
 // Controllers
-const guestController = require('../Controllers/guestController')
+const guestController = require('../Controllers/GuestController')
 
 // get Route
 router.get('/all',guestController.getAllGuests)

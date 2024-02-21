@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 
 // Controllers
-const hotelController = require('../Controllers/hotelConroller')
+const hotelController = require('../Controllers/hotelController')
 
 // get Route
 router.get('/all',hotelController.getAll)
