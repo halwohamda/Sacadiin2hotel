@@ -13,3 +13,92 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum ROLES {
+  admin
+  user
+}
+
+model Users {
+  userid   Int      @id @default(autoincrement())
+  email    String   @unique
+  password String
+  joinedAt DateTime @default(now())
+  role     ROLES    @default(user)
+}
+
+model Hotel {
+  hotel_id  Int        @id @default(autoincrement())
+  name      String
+  address   String
+  phone     String
+  email     String      @unique
+  checkin   DateTime    @default(now())
+  checkout  DateTime    @default(now())
+  emplooyee Emplooyee[]
+  room      Rooms[]
+}
+
+model Emplooyee {
+  emplooyee_id Int      @id @default(autoincrement())
+  firstname    String
+  middlename   String
+  lastname     String
+  position     String
+  salary       Decimal
+  phone        String
+  email        String
+  HireDate     DateTime @default(now())
+  hotel_id     Int
+  hotels       Hotel    @relation(fields: [hotel_id], references: [hotel_id])
+}
+
+model RoomType {
+  type_id       Int     @id @default(autoincrement())
+  name          String
+  Description   String
+  PricePerNight Decimal
+  capacity      Int
+  room          Rooms[]
+}
+
+model Rooms {
+  room_id    Int      @id @default(autoincrement())
+  hotel_id   Int
+  type_id    Int
+  booking_id Int
+  status     String
+  hotel      Hotel    @relation(fields: [hotel_id], references: [hotel_id])
+  room_type  RoomType @relation(fields: [type_id], references: [type_id])
+  booking    Booking  @relation(fields: [booking_id], references: [booking_id])
+}
+
+model Booking {
+  booking_id   Int       @id @default(autoincrement())
+  roomNumber   Int
+  guest_id     Int
+  totalPrice   Decimal
+  checkinDate  DateTime @default(now())
+  checkoutDate DateTime @default(now())
+  room         Rooms[]
+  payments     Payment[]
+  guests       Guest     @relation(fields: [guest_id], references: [guest_id])
+}
+
+model Guest {
+  guest_id  Int       @id @default(autoincrement())
+  firstName String
+  MiddleName  String
+  lastName  String
+  phone     String
+  email     String    @unique
+  booking   Booking[]
+}
+
+model Payment {
+  payment_id    Int      @id @default(autoincrement())
+  booking_id    Int
+  amount        Decimal
+  paymentDate   DateTime @default(now())
+  paymentMethod String
+  booking       Booking  @relation(fields: [booking_id], references: [booking_id])
+}
