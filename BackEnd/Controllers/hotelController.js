@@ -1,79 +1,33 @@
-const {PrismaClient} = require('@prisma/client');
-const prisma =  new PrismaClient();
+const {PrismaClient} = require("@prisma/client");
+const prisma = new PrismaClient();
 
-// Get 
 const getAll = async(req,res)=>{
-    const getHotels = await prisma.hotel.findMany({});
-     res.json({getHotels});
+    const hotels = await prisma.hotel.findMany({})
+    res.json(hotels)
 }
 
-// Post
-const createHotel = async(req,res)=>{
-    const {name,address,phone,email} =req.body;
-    if(!name || !address || !phone || !email){
-        res.json({message: "Please enter a name or address or a phone number."});
-    }else{
-        const newHotel = await  prisma.hotel.create({
-            data:{
-                name,
-                address,
-                phone,
-                email
-            }
-        });
+
+const postHotel = async(req,res)=>{
+    const {hotelname,address,email,phone} = req.body;
+    if(!hotelname || !address || !email || !phone){
         res.json({
-            message: "Successfully created Hotel."
+            status: 'Fadlan Lama ogola isago madhan'
         })
-    }
-    
+    }else{
+        const newHotel = await prisma.hotel.create({
+            data:{
+                hotelname,
+                address,
+                email,
+                phone
+            }
+        })
+        res.json({
+            newHotel
+        })
+    }   
 }
-
-// Deleting Hotel
-
-const deletingHotel = async(req,res)=>{
-    const {id} = req.params;
-    const deleted = await prisma.hotel.delete({
-        where:{hotel_id:+id}
-    })
-    res.json({message: `Success deleting hotel: ${id}`})
-}
-
-// Updating Hotel
-const updatingHotel = async(req,res)=>{
-    const {name,address,phone,email} = req.body;
-    const {id} = req.params 
-    const updated = await prisma.hotel.update({
-        data:{
-            name,
-            address,
-            phone,
-            email
-        },
-        where:{hotel_id:+id}
-    });
-    res.json({message: `Successfully updated Hotel: ${id}`})
-
-}
-
-// Filtering Hotels
-
-const filteringHotels = async(req,res)=>{
-    const {id} = req.params;
-    const filter  = await prisma.hotel.findUnique({
-        where:{hotel_id:+id}
-    })
-    res.json({
-        message: "Successfully Filtered a Hotel",
-        filter
-    })
-}
-
-
-module.exports = {
+module.exports ={
     getAll,
-    createHotel,
-    deletingHotel,
-    updatingHotel,
-    filteringHotels
+    postHotel
 }
-
