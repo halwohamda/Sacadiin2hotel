@@ -8,4 +8,4 @@ app.use(express.json())
 app.use('/api/hotel',hotelRoute)
 app.listen(port,()=>{
     console.log(`http://localhost:${port}`)
-})
+});
