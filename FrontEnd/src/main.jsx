@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import Get from './Components/Hotel/Get.jsx'
-import Post from './Components/Hotel/Post.jsx'
-import Update from './Components/Hotel/Update.jsx'
+import Get from './Components/Get.jsx'
+import Post from './Components/Post.jsx'
+import Update from './Components/Update.jsx'
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 const router = createBrowserRouter([
   {
