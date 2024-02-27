@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const port  =1147
 const hotelRoute = require('./routes/hotelRoute')
-cosnt 
+const EmployeeRoute = require('./routes/EmployeeRoute')
 const cors = require('cors')
 app.use(cors())
 app.use(express.json())
