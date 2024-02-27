@@ -10,7 +10,8 @@ const App = () => {
       <div className="menu">
         <nav>
           <ul>
-            <Link to='/GetAll'>Hotel</Link>
+            <Link to='/GetAll'>Hotel</Link> <br />
+            <Link to='/Get'>Emplooye</Link>
           </ul>
         </nav>
       </div>

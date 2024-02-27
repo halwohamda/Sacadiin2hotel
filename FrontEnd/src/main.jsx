@@ -22,6 +22,18 @@ const router = createBrowserRouter([
       {
         path:'/Update',
         element: <Update />
+      },
+      //Employee
+      {
+        path : '/Get',
+        element: <Get/>
+      },{
+        path: "/Post",
+        element: <Post/>
+      },
+      {
+       path: "/Update",
+       element: <Update/>
       }
     ]
   }
