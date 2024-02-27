@@ -19,14 +19,14 @@ const Post = () => {
   const handleSubmit = async(e)=>{
     e.preventDefault();
     const {hotelname,address,email,phone} = values;
-    if(!hotelname ||!address ||!email ||!phone){
+    if(!firstname||!middleName ||!lastName ||!postion ||!salary ||!phoen ||!email ||!hireDate){
      
     }
     else{
       const data = {
-        hotelname,
-        address,
-        email,
+         firstname,
+         middleName,
+        lastName,
         phone
       }
       const response = await fetch("http://localhost:4000/api/hotel/new",{
