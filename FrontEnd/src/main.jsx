@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       },
       //Employee
       {
-        path : '/Get',
+        path : '/GetAll',
         element: <Get/>
       },{
         path: "/Post",
