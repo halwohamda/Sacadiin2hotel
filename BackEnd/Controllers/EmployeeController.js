@@ -12,5 +12,7 @@ const PostEmployee = async (res,req)=>{
         req.json({
             status: 'fadlan xog gali'
         })
+    }else{
+        const
     }
 }
