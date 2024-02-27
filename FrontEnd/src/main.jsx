@@ -6,7 +6,8 @@ import Get from './Components/Hotel/Get.jsx'
 import Post from './Components/Hotel/Post.jsx'
 import Update from './Components/Hotel/Update.jsx'
 import Get from './Components/Employe/Get.jsx'
-
+import Post from './Components/Employe/Post.jsx'
+im
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 const router = createBrowserRouter([
   {
