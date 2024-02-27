@@ -53,7 +53,7 @@ const Post = () => {
             </Link>
          </div>
          <div className="title">
-         <h2 className="text-2xl font-semibold mb-4">Create Hotel</h2>
+         <h2 className="text-2xl font-semibold mb-4">Create Employee</h2>
          </div>
          </div>
           <form onSubmit={handleSubmit}>
