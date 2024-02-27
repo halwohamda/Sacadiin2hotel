@@ -15,6 +15,7 @@ const PostEmployee = async (res,req)=>{
     }else{
         const newEmployee = await prisma.emplooyee.create({
             
+
         })
     }
 }
