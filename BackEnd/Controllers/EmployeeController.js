@@ -3,5 +3,6 @@ const prisma = new PrismaClient();
 
 const get = async (res,req)=>{
     const Employee = await prisma.emplooyee.findMany({})
-    res.json(Employee)
+    res.json(Employee);
 }
+
