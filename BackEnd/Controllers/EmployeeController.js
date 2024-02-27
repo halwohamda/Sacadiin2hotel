@@ -14,7 +14,16 @@ const PostEmployee = async (res,req)=>{
         })
     }else{
         const newEmployee = await prisma.emplooyee.create({
-            
+            data:{
+                firstname,
+                middlename,
+                lastname, 
+                position,
+                salary,
+                phone,
+                email,
+                HireDate
+            }
 
         })
     }
