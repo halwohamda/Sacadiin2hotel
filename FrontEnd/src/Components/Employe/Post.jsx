@@ -33,7 +33,7 @@ const Post = () => {
         email,
         hireDate
       }
-      const response = await fetch("http://localhost:4000/api/hotel/new",{
+      const response = await fetch("http://localhost:4000/api/Employee/new",{
         method: "POST",
         headers: {
           "Content-Type": "application/json"
