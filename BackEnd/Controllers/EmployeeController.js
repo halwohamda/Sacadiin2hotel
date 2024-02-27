@@ -7,7 +7,7 @@ const getAll = async (res,req)=>{
 }
 
 const PostEmployee = async (res,req)=>{
-    const { firstname,middlename, lastname    ,position    ,salary       ,phone       ,email       ,HireDate}= req.body;
+    const { firstname,middlename, lastname,position,salary,phone ,email,HireDate}= req.body;
     if(!firstname,!middlename,!lastname, !position,!salary,!phone,!email,!HireDate){
         req.json({
             status: 'fadlan xog gali'
@@ -26,5 +26,12 @@ const PostEmployee = async (res,req)=>{
             }
 
         })
+        res.json({
+            newEmployee
+        })
     }
+}
+module.exports = {
+    getAll,
+    PostEmployee
 }
