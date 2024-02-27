@@ -15,7 +15,7 @@ const postHotel = async(req,res)=>{
         })
     }else{
         const newHotel = await prisma.hotel.create({
-            data:{
+            data:{  
                 hotelname,
                 address,
                 email,
