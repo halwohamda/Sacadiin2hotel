@@ -7,5 +7,4 @@ const getAll = async (res,req)=>{
 }
 
 const PostEmployee = async (res,req)=>{
-    const {}
-}
+    const { firstname,middlename, lastname    ,position    ,salary       ,phone       ,email       ,HireDate}= req.body
