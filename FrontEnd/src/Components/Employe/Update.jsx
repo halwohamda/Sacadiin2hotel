@@ -11,7 +11,7 @@ const Update = () => {
             </Link>
          </div>
          <div className="title">
-         <h2 className="text-2xl font-semibold mb-4">Update Hotel</h2>
+         <h2 className="text-2xl font-semibold mb-4">Update Employee</h2>
          </div>
          </div>
           <form>
