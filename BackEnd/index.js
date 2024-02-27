@@ -7,6 +7,7 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.json())
 app.use('/api/hotel',hotelRoute)
+app.use('/api/Employee',EmployeeRoute)
 app.listen(port,()=>{
     console.log(`http://localhost:${port}`)
 });
