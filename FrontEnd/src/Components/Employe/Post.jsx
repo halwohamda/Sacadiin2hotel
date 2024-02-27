@@ -6,10 +6,15 @@ import 'react-toastify/dist/ReactToastify.css';
 const Post = () => {
   const notify = () => toast("Waa lagu guulaystay!");
   const [values,setValues]= useState({
-    hotelname: "",
-    address: "",
-    email: "",
-    phone: ""
+   firstname: "",
+    middleName: "",
+    lastName: "",
+    postion: "",
+    salary: "",
+     phone: "",
+     email: "",
+     hireDate: ""
+ 
   })
   const handleSubmit = async(e)=>{
     e.preventDefault();
