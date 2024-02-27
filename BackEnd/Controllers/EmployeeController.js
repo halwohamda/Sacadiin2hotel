@@ -13,6 +13,6 @@ const PostEmployee = async (res,req)=>{
             status: 'fadlan xog gali'
         })
     }else{
-        const
+        const newEmployee = await prisma.emplooyee.create
     }
 }
