@@ -11,7 +11,7 @@ const App = () => {
         <nav>
           <ul>
             <Link to='/GetAll'>Hotel</Link> <br />
-            <Link to='/Get'>Emplooye</Link>
+            <Link to='/GetAll'>Emplooye</Link>
           </ul>
         </nav>
       </div>
